@@ -1,6 +1,5 @@
 package leetCode;
 
-import java.io.UnsupportedEncodingException;
 import java.util.*;
 
 public class Solution {
@@ -10,27 +9,28 @@ public class Solution {
                 new int[]{1, 5},
                 new int[]{10, 4},
                 new int[]{4, 3},
-                new int[]{4, 4},
-                new int[]{4, 5},
-                new int[]{4, 6},
                 new int[]{4, 7},
+                new int[]{4, 6},
+                new int[]{4, 4},
                 new int[]{4, 8},
-                new int[]{5, 4},
-                new int[]{5, 5},
-                new int[]{5, 6},
-                new int[]{5, 7},
+                new int[]{4, 5},
+
+
                 new int[]{5, 8},
+                new int[]{5, 6},
+                new int[]{5, 4},
+                new int[]{5, 7},
+                new int[]{5, 5},
                 new int[]{99, 99},
-                new int[]{1, 1},
-        };
+                new int[]{1, 1},};
         solution.numberOfWeakCharacters(properties);
 
     }
 
     public int numberOfWeakCharacters(int[][] properties) {
 
-        // 构建treemap
-        TreeMap<Integer, ArrayList<Integer>> sortMap = new TreeMap<>();
+        // 构建倒叙treemap
+        TreeMap<Integer, ArrayList<Integer>> sortMap = new TreeMap<>(Comparator.reverseOrder());
         for (int[] p : properties) {
             int attack = p[0];
             int defense = p[1];
@@ -47,14 +47,21 @@ public class Solution {
             sortMap.put(attack, defenseList);
         }
 
-        //遍历treemap，有序
-        for (Map.Entry<Integer, ArrayList<Integer>> entry : sortMap.entrySet()) {
+        final Collection<ArrayList<Integer>> values = sortMap.values();
+        int count = 0;
+        //第一个key就是最大攻击力，只要找出所有防御力比他小的元素，统计即可
+        int maxDefense = 0;
+        for (ArrayList<Integer> defenseList : values) {
+            // 第一个元素找出最大防御力
+            if (maxDefense == 0) maxDefense = Collections.max(defenseList);
+
+            // 开始找所有的弱角色
+            for (Integer defenseVal : defenseList)
+                if (defenseVal < maxDefense) count++;
 
         }
 
-
-
-        return 0;
+        return count;
     }
 
 
