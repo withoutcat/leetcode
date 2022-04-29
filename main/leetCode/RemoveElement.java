@@ -15,7 +15,7 @@ public class RemoveElement {
         int writeIndex = 0;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != val)
-                nums[writeIndex++] = nums[i]; //这里k++的用法很有意思，评论区里学来的
+                nums[writeIndex++] = nums[i]; //这里writeIndex++的用法很有意思，评论区里学来的
         }
         return writeIndex;
     }
