@@ -1,5 +1,7 @@
 package leetCode;
 
+import java.util.Collection;
+
 public class ListNode {
     int val;
     ListNode next;
@@ -14,6 +16,22 @@ public class ListNode {
     ListNode(int val, ListNode next) {
         this.val = val;
         this.next = next;
+    }
+
+    public static ListNode nodeFactory(int[] list) {
+        ListNode head = null;
+        ListNode node = null;
+        for (int val:
+             list) {
+            if (head == null) {
+                head = new ListNode(val);
+                node = head;
+            } else {
+                node.next = new ListNode(val);
+                node = node.next;
+            }
+        }
+        return head;
     }
 }
 
