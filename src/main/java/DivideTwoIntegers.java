@@ -1,17 +1,4 @@
 class DivideTwoIntegers {
-    public static void main(String[] args) {
-        DivideTwoIntegers d = new DivideTwoIntegers();
-        int divide = d.divide1(Integer.MIN_VALUE, -1);
-        System.out.println(divide);
-    }
-
-    public int divide1(int dividend, int divisor) {
-        try {
-            return Math.divideExact(dividend, divisor);
-        } catch (ArithmeticException a) {
-            return Integer.MAX_VALUE;
-        }
-    }
 
     /**
      * 解出来了，但是Leetcode测试用例超时

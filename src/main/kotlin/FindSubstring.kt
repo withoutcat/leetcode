@@ -40,6 +40,6 @@ fun findSubstring(s: String, words: Array<String>): List<Int> {
 
 
 fun main() {
-    findSubstring("barfoothefoobarman", arrayOf("foo", "bar"))
-    findSubstring("wordgoodgoodgoodbestword", arrayOf("word", "good", "best", "word"))
+    println(findSubstring("barfoothefoobarman", arrayOf("foo", "bar")))
+    println(findSubstring("wordgoodgoodgoodbestword", arrayOf("word", "good", "best", "word")))
 }
