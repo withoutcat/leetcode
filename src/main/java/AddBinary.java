@@ -17,12 +17,13 @@ public class AddBinary {
             char cb = indexB >= 0 ? b.charAt(indexB) : '0';
             int n = ca + cb;
             switch (n) {
-                case 98 -> {
+                case 98: {
                     sb.insert(0, carry ? '1' : '0');
                     carry = true;
                 }
-                case 97 -> sb.insert(0, carry ? '0' : '1');
-                default -> {
+                case 97:
+                    sb.insert(0, carry ? '0' : '1');
+                default: {
                     sb.insert(0, carry ? '1' : '0');
                     carry = false;
                 }

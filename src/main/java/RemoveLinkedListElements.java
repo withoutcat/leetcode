@@ -1,8 +1,8 @@
 public class RemoveLinkedListElements {
     public static void main(String[] args) {
         RemoveLinkedListElements r = new RemoveLinkedListElements();
-        var head = ListNode.nodeFactory(new int[]{6, 6, 1, 6, 6});
-        var theHead = r.removeElements(head, 6);
+        ListNode head = ListNode.makeNode(6, 6, 1, 6, 6);
+        ListNode theHead = r.removeElements(head, 6);
         System.out.println(theHead);
 
     }

@@ -23,7 +23,7 @@ public class LengthOfLastWord {
     public int lengthOfLastWord1(String s) {
         final String[] split = s.split(" ");
         for (int i = split.length - 1; i >= 0; i--) {
-            if (!split[i].isBlank()) return split[i].length();
+            if (!split[i].isEmpty()) return split[i].length();
         }
         return 0;
     }

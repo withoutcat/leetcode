@@ -19,15 +19,22 @@ public class ValidParentheses {
             }
             sb.append(c);
         }
-        return sb.isEmpty();
+        return sb.length() == 0;
     }
 
     public boolean isPaired(char c1, char c2) {
-        return switch (c1) {
-            case '(' -> c2 == ')';
-            case '[' -> c2 == ']';
-            case '{' -> c2 == '}';
-            default -> false;
-        };
+        switch (c1) {
+            case '(':
+                return c2 == ')';
+
+            case '[':
+                return c2 == ']';
+
+            case '{':
+                return c2 == '}';
+
+            default:
+                return false;
+        }
     }
 }

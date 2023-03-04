@@ -30,17 +30,35 @@ public class LetterCombinationsOfAphoneNumber {
 
 
     private String[] getArr(char c) {
-        return switch (c) {
-            case '2' -> k2;
-            case '3' -> k3;
-            case '4' -> k4;
-            case '5' -> k5;
-            case '6' -> k6;
-            case '7' -> k7;
-            case '8' -> k8;
-            case '9' -> k9;
-            default -> null;
-        };
+        switch (c) {
+            case '2': {
+                return k2;
+            }
+            case '3': {
+                return k3;
+            }
+            case '4': {
+                return k4;
+            }
+            case '5': {
+                return k5;
+            }
+            case '6': {
+                return k6;
+            }
+            case '7': {
+                return k7;
+            }
+            case '8': {
+                return k8;
+            }
+            case '9': {
+                return k9;
+            }
+            default: {
+                return null;
+            }
+        }
     }
 
     String[] k2 = new String[]{"a", "b", "c"};

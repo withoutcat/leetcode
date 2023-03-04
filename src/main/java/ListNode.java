@@ -2,9 +2,6 @@ public class ListNode {
     int val;
     ListNode next;
 
-    ListNode() {
-    }
-
     ListNode(int val) {
         this.val = val;
     }
@@ -14,11 +11,10 @@ public class ListNode {
         this.next = next;
     }
 
-    public static ListNode nodeFactory(int[] list) {
+    public static ListNode makeNode(int... list) {
         ListNode head = null;
         ListNode node = null;
-        for (int val :
-                list) {
+        for (int val : list) {
             if (head == null) {
                 head = new ListNode(val);
                 node = head;

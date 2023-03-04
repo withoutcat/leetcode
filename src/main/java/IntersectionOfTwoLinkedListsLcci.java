@@ -12,13 +12,13 @@ public class IntersectionOfTwoLinkedListsLcci {
 
     private ListNode reverseList(ListNode head) {
         if (head != null && head.next != null) {
-            var node = head.next.next;
-            var tail = head;
+            ListNode node = head.next.next;
+            ListNode tail = head;
             head = head.next;
             head.next = tail;
             tail.next = null;
             while (node != null) {
-                var next = node.next;
+                ListNode next = node.next;
                 node.next = head;
                 head = node;
                 node = next;

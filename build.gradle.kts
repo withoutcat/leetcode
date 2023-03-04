@@ -4,17 +4,17 @@ plugins {
     application
 }
 
-tasks.withType<JavaCompile> {
-    javaCompiler.set(javaToolchains.compilerFor {
-        languageVersion.set(JavaLanguageVersion.of(17))
-    })
-}
-
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    kotlinOptions {
-        jvmTarget = "17"
-    }
-}
+//tasks.withType<JavaCompile> {
+//    javaCompiler.set(javaToolchains.compilerFor {
+//        languageVersion.set(JavaLanguageVersion.of(17))
+//    })
+//}
+//
+//tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+//    kotlinOptions {
+//        jvmTarget = "17"
+//    }
+//}
 
 group = "com.sunziwen"
 version = "1.0-SNAPSHOT"

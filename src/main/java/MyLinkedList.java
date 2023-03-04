@@ -18,7 +18,7 @@ class MyLinkedList {
     }
 
     private Optional<MyLinkedList> getNode(int index) {
-        var node = this.head;
+        MyLinkedList node = this.head;
         MyLinkedList res = null;
         int count = 0;
         while (node != null) {
