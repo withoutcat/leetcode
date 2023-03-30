@@ -1,36 +1,41 @@
-import java.util.*
-
+var head: ListNode? = null
 fun mergeKLists(lists: Array<ListNode?>): ListNode? {
-    val dataMap = TreeMap<Int, Int>()
-    fun plus(key: Int) {
-        dataMap[key] = (dataMap[key] ?: 0) + 1
-    }
-    // 统计所有元素的数量
-    var count = 0
+    var currentNode: ListNode? = null
+
     lists.forEach {
-        var tmpNode: ListNode? = it
-        while (tmpNode != null) {
-            plus(tmpNode.`val`)
-            tmpNode = tmpNode.next
-            count++
-        }
-    }
-    // 遍历输出结果
-    var node: ListNode? = null
-    var head: ListNode? = null
-    dataMap.forEach {
-        // 如果i重复出现就链接起来
-        for (j in 0 until it.value) {
-            node = if (head == null) {
-                head = ListNode(it.key)
-                head
-            } else {
-                node?.let { n ->
-                    n.next = ListNode(it.key)
-                    n.next
+        it?.let {
+            while (currentNode != null) {
+                // 没有头,先初始化
+                if (head == null) {
+                    head = it
+                    currentNode = head
+                } else {
+                    // 遍历头找到合适的位置
+
+
+                    // 每次都要更新头,始终保持他是最小的
                 }
             }
         }
     }
+
     return head
+}
+
+/**
+ * 如果[inputNode]的值处于[this]和[this].next的值之间,那么就插入
+ *
+ * @param inputNode
+ * @return true表示插入成功,false表示[inputNode]的值太大,不做任何处理
+ */
+private fun ListNode.insert(inputNode: ListNode): Boolean {
+    return (inputNode.`val` >= this.`val` && inputNode.`val` <= this.next.`val`).also {
+        val next = this.next
+        this.next = inputNode
+        inputNode.next = next
+    }
+}
+
+private fun iterateHead(inputNode: ListNode) {
+
 }
