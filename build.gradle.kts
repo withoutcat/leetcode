@@ -4,6 +4,13 @@ plugins {
     application
 }
 
+// 设置 JVM 版本为 JDK 17
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
+
 //tasks.withType<JavaCompile> {
 //    javaCompiler.set(javaToolchains.compilerFor {
 //        languageVersion.set(JavaLanguageVersion.of(17))
